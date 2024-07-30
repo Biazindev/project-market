@@ -4,6 +4,8 @@ import { ClienteList } from "../Home"
 import axios from "axios"
 import Header from "../../components/Header"
 import Consulta from "../../components/Consulta"
+import Clientes from "../../components/Clientes"
+import Container from "../../components/Container"
 
 const BASE_URL = 'https://localhost:8080'
 
@@ -30,6 +32,7 @@ const Categorias = () => {
         <>
             <Header />
             <div className="container">
+            <Container />    
             <Consulta />
             </div>
         </>

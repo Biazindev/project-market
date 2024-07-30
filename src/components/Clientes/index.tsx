@@ -56,7 +56,6 @@ const Cliente = () => {
                     <tr>
                         <CabecalhoTabela>Nome</CabecalhoTabela>
                         <CabecalhoTabela>Endereço</CabecalhoTabela>
-                        <CabecalhoTabela>Email</CabecalhoTabela>
                         <CabecalhoTabela>Telefone</CabecalhoTabela>
                     </tr>
                 </thead>
@@ -67,9 +66,8 @@ const Cliente = () => {
                             <p>{cliente.nome}</p>
                             </CelulaTabela>
                             <CelulaTabela>
-                                <p>Rua: {cliente.rua} Nº: {cliente.numero}, Bairro: {cliente.bairro}</p>
+                                <p>Rua:{cliente.rua}, Bairro: {cliente.bairro}</p>
                             </CelulaTabela>
-                            <CelulaTabela>Email</CelulaTabela>
                             <CelulaTabela>{cliente.telefone}</CelulaTabela>
                         </LinhaTabela>
                     ))}

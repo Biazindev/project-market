@@ -1,27 +1,18 @@
-import axios from "axios"
 import { useEffect, useState } from "react"
 import { useNavigate, useParams } from "react-router-dom"
+import { ClienteList } from "../Home"
+import axios from "axios"
 import Header from "../../components/Header"
-import Container from "../../components/Container"
-import Clientes from "../../components/Clientes"
 import Consulta from "../../components/Consulta"
-
-export type ClienteList = {
-    id: number
-    nome: string
-    cpf: string
-    telefone: string
-    email: string
-    rua: string
-    numero: number
-    bairro: string
-    cidade: string
-    uf: string
-}
+import Clientes from "../../components/Clientes"
+import Container from "../../components/Container"
+import PDV from "../../components/PDV"
 
 const BASE_URL = 'https://localhost:8080'
 
-const Home = () => {
+
+const PdvTela = () => {
+    
     const { id } = useParams();
     const navigate = useNavigate();
     const [consulta, setConsulta] = useState<ClienteList[]>([])
@@ -41,10 +32,12 @@ const Home = () => {
     return (
         <>
             <Header />
-            <Container />
-            <Clientes />
+            <div className="container">
+            <Container />    
+            <PDV />
+            </div>
         </>
     )
 }
 
-export default Home
+export default PdvTela

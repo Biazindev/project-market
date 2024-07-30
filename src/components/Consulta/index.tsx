@@ -1,7 +1,9 @@
 import axios from "axios"
 import { useState } from "react"
+import { ContainerButton, Conteudo } from "./styles";
+import { ButtonContainer } from "../Clientes/styles";
 
-const Consulta = () => {
+  const Consulta = () => {
     const [formData, setFormData] = useState({
         nome: "",
         telefone: "",
@@ -13,7 +15,7 @@ const Consulta = () => {
         uf: ""
     });
 
-    const handleChange = (e: { target: { name: string; value: string } }) => {
+     const envia = (e: { target: { name: string; value: string } }) => {
         const { name, value } = e.target
         setFormData({
             ...formData,
@@ -21,9 +23,9 @@ const Consulta = () => {
         });
     };
 
-    const handleSubmit = (e: { preventDefault: () => void; }) => {
+     const cadastrar = (e: { preventDefault: () => void; }) => {
         e.preventDefault();
-        axios.post(`http://localhost:8080/clientes`, formData)
+        axios.post(`http://localhost:8080`, formData)
             .then(response => {
                 console.log('Cliente cadastrado com sucesso!', response.data)
             })
@@ -34,33 +36,36 @@ const Consulta = () => {
 
     return (
         <>
-            <p>Cadastrar cliente</p>
-            <form onSubmit={handleSubmit}>
-                <div>
-                    <input type="text" name="nome" placeholder="Nome" value={formData.nome} onChange={handleChange} />
-                </div>
-                <div>
-                    <input type="text" name="telefone" placeholder="Telefone" value={formData.telefone} onChange={handleChange} />
-                </div>
-                <div>
-                    <input type="text" name="cpf" placeholder="CPF" value={formData.cpf} onChange={handleChange} />
-                </div>
-                <div>
-                    <input type="text" name="rua" placeholder="Rua" value={formData.rua} onChange={handleChange} />
-                </div>
-                <div>
-                    <input type="text" name="numero" placeholder="Número" value={formData.numero} onChange={handleChange} />
-                </div>
-                <div>
-                    <input type="text" name="bairro" placeholder="Bairro" value={formData.bairro} onChange={handleChange} />
-                </div>
-                <div>
-                    <input type="text" name="cidade" placeholder="Cidade" value={formData.cidade} onChange={handleChange} />
-                </div>
-                <div>
-                    <input type="text" name="uf" placeholder="UF" value={formData.uf} onChange={handleChange} />
-                </div>
-                <button type="submit">Cadastrar</button>
+            <form onSubmit={cadastrar}>
+                <Conteudo className="container">
+                    <div>
+                        <input type="text" name="nome" placeholder="Digite aqui seu nome:" value={formData.nome} onChange={envia} />
+                    </div>
+                    <div>
+                        <input type="text" name="telefone" placeholder="Digite aqui seu Telefone:" value={formData.telefone} onChange={envia} />
+                    </div>
+                    <div>
+                        <input type="text" name="cpf" placeholder="Digite aqui seu CPF:" value={formData.cpf} onChange={envia} />
+                    </div>
+                    <div>
+                        <input type="text" name="rua" placeholder="Digite aqui sua Rua:" value={formData.rua} onChange={envia} />
+                    </div>
+                    <div>
+                        <input type="text" name="numero" placeholder="Digite aqui seu Número:" value={formData.numero} onChange={envia} />
+                    </div>
+                    <div>
+                        <input type="text" name="bairro" placeholder="Digite aqui seu Bairro:" value={formData.bairro} onChange={envia} />
+                    </div>
+                    <div>
+                        <input type="text" name="cidade" placeholder="Digite aqui sua Cidade:" value={formData.cidade} onChange={envia} />
+                    </div>
+                    <div>
+                        <input type="text" name="uf" placeholder="Digite aqui UF:" value={formData.uf} onChange={envia} />
+                    </div>
+                    <ContainerButton>
+                        <ButtonContainer type="submit">Cadastrar</ButtonContainer>
+                    </ContainerButton>
+                </Conteudo>
             </form>
         </>
     );

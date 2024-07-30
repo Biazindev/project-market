@@ -32,14 +32,14 @@ export const Container = styled.div`
 
 export const ButtonContainer = styled.button`
     width: 184px;
-    margin-top: 24px;
+    margin-top: 8px;
     background-color: ${cores.CorCont};
     align-items: center;
     justify-content: center;
-    padding: 12px;
+    padding: 4px;
     border: none;      
     background-color: #3742fa;
-    border-radius: 16px;
+    border-radius: 4px;
     color: ${cores.corSecundaria};
     font-size: 18px;
     font-weight: bold;
