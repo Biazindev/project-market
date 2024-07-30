@@ -7,6 +7,7 @@ const PDV = () => {
     const [formData, setFormData] = useState({
         nome: ""
     });
+    const [successMessage, setSuccessMessage] = useState<string | null>(null);
 
     const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
         const { name, value } = event.target;
@@ -18,9 +19,12 @@ const PDV = () => {
 
     const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault();
-        axios.post(`http://localhost:8080/PVD`, formData)
+        axios.post(`http://localhost:8080/PDV`, formData)
             .then(response => {
                 console.log('Produto cadastrado com sucesso!', response.data);
+                setSuccessMessage("PDV cadastrado com sucesso!");
+                // Limpar o formulário após o sucesso
+                setFormData({ nome: "" });
             })
             .catch(error => {
                 console.error('Ocorreu um erro ao cadastrar o produto!', error);
@@ -31,6 +35,7 @@ const PDV = () => {
         <Conteudo>
             <form onSubmit={handleSubmit}>
                 <div className="container">
+                    {successMessage && <div style={{ color: 'green', textAlign: 'center' }}>{successMessage}</div>}
                     <ItemCont>
                         <input
                             type="text"
