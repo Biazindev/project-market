@@ -1,9 +1,9 @@
-import axios from "axios"
-import { useState } from "react"
+import axios from "axios";
+import { useState } from "react";
 import { ContainerButton, Conteudo } from "./styles";
 import { ButtonContainer } from "../Clientes/styles";
 
-  const Consulta = () => {
+const Consulta = () => {
     const [formData, setFormData] = useState({
         nome: "",
         telefone: "",
@@ -12,26 +12,27 @@ import { ButtonContainer } from "../Clientes/styles";
         numero: "",
         bairro: "",
         cidade: "",
-        uf: ""
+        uf: "",
+        email: ""
     });
 
-     const envia = (e: { target: { name: string; value: string } }) => {
-        const { name, value } = e.target
+    const envia = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const { name, value } = e.target;
         setFormData({
             ...formData,
             [name]: value
         });
     };
 
-     const cadastrar = (e: { preventDefault: () => void; }) => {
+    const cadastrar = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        axios.post(`http://localhost:8080`, formData)
+        axios.post(`http://localhost:8080/clientes`, formData)
             .then(response => {
-                console.log('Cliente cadastrado com sucesso!', response.data)
+                console.log('Cliente cadastrado com sucesso!', response.data);
             })
             .catch(error => {
-                console.error('Ocorreu um erro ao cadastrar o cliente!', error)
-            })
+                console.error('Ocorreu um erro ao cadastrar o cliente!', error);
+            });
     };
 
     return (
@@ -62,6 +63,9 @@ import { ButtonContainer } from "../Clientes/styles";
                     <div>
                         <input type="text" name="uf" placeholder="Digite aqui UF:" value={formData.uf} onChange={envia} />
                     </div>
+                    <div>
+                        <input type="email" name="email" placeholder="Digite aqui seu Email:" value={formData.email} onChange={envia} />
+                    </div>
                     <ContainerButton>
                         <ButtonContainer type="submit">Cadastrar</ButtonContainer>
                     </ContainerButton>
@@ -71,4 +75,4 @@ import { ButtonContainer } from "../Clientes/styles";
     );
 }
 
-export default Consulta
+export default Consulta;
