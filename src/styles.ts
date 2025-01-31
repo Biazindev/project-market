@@ -1,8 +1,9 @@
 import { createGlobalStyle } from "styled-components"
 
 export const cores = {
-    corPrimaria: '#3d3d3d',
-    corSecundaria: '#d2dae2',
+    corPrimaria: 'rgb(137, 162, 218)',
+    corSecundaria: 'rgb(0, 36, 114)',
+    corTerciaria: '#fff',
     CorCont: '#f1f2f6'
   }
 

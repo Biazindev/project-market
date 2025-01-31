@@ -14,7 +14,7 @@ export const Container = styled.div`
     border-radius: 16px;
     justify-content: center;
     flex-direction: column;
-    
+
     h2 {
         margin: 24px;
         background-color: ${cores.CorCont};
@@ -37,10 +37,10 @@ export const ButtonContainer = styled.button`
     align-items: center;
     justify-content: center;
     padding: 4px;
-    border: none;      
+    border: none;
     background-color: #3742fa;
     border-radius: 4px;
-    color: ${cores.corSecundaria};
+    color: ${cores.corTerciaria};
     font-size: 18px;
     font-weight: bold;
     cursor: pointer;
@@ -78,7 +78,7 @@ export const Tabela = styled.table`
 
 export const CabecalhoTabela = styled.th`
     padding: 12px;
-    background-color: #007bff;
+    background-color: ${cores.corSecundaria};
     color: white;
     text-align: left;
     border: 1px solid #ddd;

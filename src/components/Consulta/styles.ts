@@ -34,5 +34,6 @@ export const ContainerButton = styled.div`
     margin-top: -8px;
     button {
     width: 100%;
+    color: ${cores.CorCont}
     }
 `

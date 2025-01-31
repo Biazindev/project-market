@@ -1,5 +1,5 @@
 import { Container, Data } from "./styles"
-import logo from '../../assets/logo.jpg'
+import logo from '../../assets/LogoPrincipal.png'
 
 const Header = () => {
     function mostrarDataAtual() {
@@ -14,7 +14,7 @@ const Header = () => {
     const mostrarDiaDaSemana = () => {
         const data = new Date()
         const diasDaSemana = [
-            'Domingo', 'Segunda-feira', 'Terça-feira', 'Quarta-feira', 
+            'Domingo', 'Segunda-feira', 'Terça-feira', 'Quarta-feira',
             'Quinta-feira', 'Sexta-feira', 'Sábado'
         ]
         return diasDaSemana[data.getDay()]

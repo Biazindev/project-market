@@ -12,20 +12,20 @@ export const Links = styled.ul`
         text-decoration: none;
         font-weight: bold;
         padding: 16px;
-        color: ${cores.corPrimaria};
-        border: 1px solid ${cores.corPrimaria};
+        color: ${cores.corSecundaria};
+        border: 1px solid ${cores.corSecundaria};
         border-bottom: 1px solid ${cores.corPrimaria};
 
         &.active {
             border-bottom: none;
-            color: ${cores.corPrimaria};
+            color: ${cores.corSecundaria};
             background-color: ${cores.CorCont};
         }
 
         &:visited,
         &:focus,
         &:hover {
-            color: ${cores.corPrimaria};
+            color: ${cores.corSecundaria};
         }
     }
 `
