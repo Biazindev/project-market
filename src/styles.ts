@@ -16,7 +16,7 @@ export const GlobalCss = createGlobalStyle`
         background-color: #dfe4ea;
     }
         .container {
-            max-width: 1024px;
+            max-width: 1150px;
             width: 100%;
             margin: 0 auto;
             display: grid;

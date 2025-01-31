@@ -28,7 +28,11 @@ const Container: React.FC = () => {
 
     return (
         <>
-            <Info><h1>Produtos</h1></Info>
+            <Info>
+              <h1>
+                  Produtos
+                </h1>
+              </Info>
             <div className="container">
                 <nav>
                     <Links>

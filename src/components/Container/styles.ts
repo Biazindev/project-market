@@ -7,7 +7,7 @@ export const Links = styled.ul`
     position: relative;
     top: 70px;
     left: 70px;
-    
+
     a {
         text-decoration: none;
         font-weight: bold;
@@ -31,8 +31,8 @@ export const Links = styled.ul`
 `
 
 export const Info = styled.div`
-    margin-left: 100px;
-    margin-top: 48px;
-    display: block;
-    width: 100%;
+display: flex;
+justify-content: center;
+margin-top: 16px
 `
+
